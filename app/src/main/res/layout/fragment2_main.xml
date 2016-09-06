@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:sat="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="1"
+    android:padding="10dp">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:id="@+id/weatherPIC"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center"
+        android:nestedScrollingEnabled="false"
+        android:src="@drawable/weather"
+        android:background="@null"
+        android:layout_weight="1.25"
+        android:layout_row="0"
+        android:layout_column="0" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="News～ 最新消息～"
+        android:textStyle="bold|italic"
+        android:textSize = "24sp"
+        android:padding="10dp"
+        android:layout_column="0"
+        android:layout_row="1"
+        android:id="@+id/textView_hot_news" />
+
+    <RelativeLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="300dp">
+
+        <ListView
+            android:layout_width="wrap_content"
+            android:layout_height="300dp"
+            android:id="@+id/getAllNewsList"
+            android:layout_column="0"
+            android:layout_row="2"
+            android:layout_alignParentStart="true"/>
+    </RelativeLayout>
+
+    <android.view.ext.SatelliteMenu
+        android:id="@+id/menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_column="0"
+        android:layout_row="0"
+        android:layout_rowSpan="4"
+        android:layout_gravity="bottom|left"
+        android:layout_margin="10dp"
+        sat:satelliteDistance="170dp"
+        sat:totalSpacingDegree="90"
+        sat:closeOnClick="true"
+        sat:expandDuration="500"/>
+
+
+</GridLayout>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Google Maps JavaScript API v3 : Marker Animations</title>
+    <link href="/maps/documentation/javascript/examples/default.css" rel="stylesheet">
+    <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+    <script>
+      var centerPoint = new google.maps.LatLng(23.695243, 120.536851); //ªì©l¦ì¸m
+      var infowindow = new google.maps.InfoWindow();
+	  var marker,i=0;
+      var map;
+         
+      function initialize() {
+        var mapOptions = {
+          zoom: 16,
+          mapTypeId: google.maps.MapTypeId.ROADMAP,
+          center: centerPoint
+        };
+        map = new google.maps.Map(document.getElementById('map_canvas'),
+                mapOptions);
+
+      }
+
+      function centerAt(latitude, longitude){
+          myLatlng = new google.maps.LatLng(latitude,longitude);
+          map.panTo(myLatlng);
+          var m = new google.maps.LatLng(latitude, longitude);
+          marker = new google.maps.Marker({
+          map:map,
+          draggable:false,
+          position: m,
+        });
+		marker.setAnimation(google.maps.Animation.DROP);
+		markersArray.push(marker);
+      }
+    </script>
+  </head>
+  <body onload="initialize()">
+    <div id="map_canvas" style="width: device-width; height: 160px;"></div>
+  </body>
+</html>

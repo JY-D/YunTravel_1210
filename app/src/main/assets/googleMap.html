@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Google Maps JavaScript API v3 : Marker Animations</title>
+    <link href="/maps/documentation/javascript/examples/default.css" rel="stylesheet">
+    <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+    <script>
+      var centerPoint = new google.maps.LatLng(23.695243, 120.536851); //初始位置
+      var infowindow = new google.maps.InfoWindow();
+	  var marker,i=0,j=0,z=0;
+      var map;
+      var markersArray=[];
+      var markersArray1=[];
+      var image1='star_mark.png',image2='restaurant.png',image3='landscape.png';
+	  var handler;
+      
+      function mark1(lat, log, i, content1){//mark加入
+        var cations = lat+','+log;
+        var m = new google.maps.LatLng(lat, log);
+        marker = new google.maps.Marker({
+          map:map,
+          draggable:false,
+          position: m,
+          icon: image1, //指定標示圖案為image
+        });
+        marker.setAnimation(google.maps.Animation.DROP);
+		markersArray.push(marker);
+		
+       google.maps.event.addListener(marker, 'click', (function(marker, i) {
+        return function() {
+          infowindow.setContent(cations + '<br><button onclick="myFunction()">加入清單</button>');
+          infowindow.open(map, marker);
+        }
+       })(marker, i));
+	  }
+
+	  function mark2(lat, log,j,content2){//mark加入
+        var cations = lat+','+log;
+        var m = new google.maps.LatLng(lat, log);
+        marker = new google.maps.Marker({
+          map:map,
+          draggable:false,
+          position: m,
+          icon: image2, //指定標示圖案為image
+        });
+        marker.setAnimation(google.maps.Animation.DROP);
+		markersArray.push(marker);
+
+       google.maps.event.addListener(marker, 'click', (function(marker, j) {
+        return function() {
+          infowindow.setContent(cations + '<br><button onclick="myFunction()">加入清單</button>');
+          infowindow.open(map, marker);
+        }
+       })(marker, j));
+	  }
+
+	  function mark3(lat, log,z,content3){//mark加入
+        var cations = lat+','+log;
+        var m = new google.maps.LatLng(lat, log);
+        marker = new google.maps.Marker({
+          map:map,
+          draggable:false,
+          position: m,
+          icon: image3, //指定標示圖案為image
+        });
+        marker.setAnimation(google.maps.Animation.DROP);
+		markersArray.push(marker);
+
+       google.maps.event.addListener(marker, 'click', (function(marker, z) {
+        return function() {
+          infowindow.setContent(cations + '<br><button onclick="myFunction()">加入清單</button>');
+          infowindow.open(map, marker);
+        }
+       })(marker, z));
+	  }
+
+
+	  function myFunction(){
+	  infowindow.close(map, marker);
+	  }
+
+
+   // Removes the overlays from the map, but keeps them in the array
+      function clearOverlays() {
+    	  if (markersArray) {
+    	    for (i in markersArray) {
+    	      markersArray[i].setMap(null);
+    	    }
+    	  }
+    	}
+      
+      
+   // Shows any overlays currently in the array
+      function showOverlays() {
+    	  if (markersArray) {
+    	    for (i in markersArray) {
+    	      markersArray[i].setMap(map);
+    	    }
+    	  }
+    	}
+      
+   // Deletes all markers in the array by removing references to them
+      function deleteOverlays() {
+        if (markersArray) {
+          for (i in markersArray) {
+            markersArray[i].setMap(null);
+          }
+          markersArray.length = 1;
+        }
+      }  
+
+      // Removes the overlays from the map, but keeps them in the array
+      function clearOverlays1() {
+    	  if (markersArray1) {
+    	    for (i in markersArray1) {
+    	      markersArray1[i].setMap(null);
+    	    }
+    	  }
+    	}
+
+      
+   // Deletes all markers in the array by removing references to them
+      function deleteOverlays1() {
+          if (markersArray1) {
+            for (i in markersArray1) {
+              markersArray1[i].setMap(null);
+            }
+            markersArray1.length = 1;
+          }
+        }
+         
+      function initialize() {
+        var mapOptions = {
+          zoom: 16,
+          mapTypeId: google.maps.MapTypeId.ROADMAP,
+          center: centerPoint
+        };
+        map = new google.maps.Map(document.getElementById('map_canvas'),
+                mapOptions);
+
+      }
+
+      function centerAt(latitude, longitude){
+          myLatlng = new google.maps.LatLng(latitude,longitude);
+          map.panTo(myLatlng);
+          var m = new google.maps.LatLng(latitude, longitude);
+          marker = new google.maps.Marker({
+          map:map,
+          draggable:false,
+          position: m,
+        });
+		marker.setAnimation(google.maps.Animation.DROP);
+		markersArray.push(marker);
+      }
+    </script>
+  </head>
+  <body onload="initialize()">
+    <div id="map_canvas" style="width: device-width; height:420px;"></div>
+  </body>
+</html>

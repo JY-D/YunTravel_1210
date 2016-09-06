@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:stretchColumns="1">
+    <LinearLayout
+        android:id="@+id/test"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+        <EditText
+
+            android:id="@+id/title_text"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/enter_title"
+            android:layout_margin="2sp"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+
+            android:singleLine="true"
+            android:maxLength="20"/>
+        <Button
+            android:id="@+id/select_color"
+
+            android:onClick="clickFunction"
+            android:layout_width="50dp"
+            android:layout_height="50dp" />
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="clickFunction"
+            android:id="@+id/option"
+            android:src="@drawable/option"
+
+            />
+        <Button
+            android:id="@+id/ok_item"
+            android:text="儲存"
+            android:onClick="onSubmit"
+
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+        <EditText
+            android:id="@+id/content_text"
+            android:hint="@string/enter_content"
+            android:gravity="top"
+            android:layout_width="fill_parent"
+            android:layout_height="350dp"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:text="開始時間"
+                />
+            <Spinner
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/start_time"
+
+
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:text="結束時間"
+                />
+
+            <Spinner
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/end_time"
+
+
+                ></Spinner>
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/picture"
+            android:layout_width="64sp"
+            android:layout_height="64sp"
+            android:transitionName="picture"
+            android:visibility="invisible"
+            android:onClick="clickPicture"
+            />
+
+
+    </LinearLayout>
+
+</LinearLayout>

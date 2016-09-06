@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.salah.myapplication" >
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/logo"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".MainAttractionsActivity"></activity>
+        <activity android:name=".MainFoodsActivity"></activity>
+        <activity android:name=".Dayschedule"></activity>
+        <activity android:name=".Dayschedule_Details"></activity>
+        <activity android:name=".MainNearMapActivity"></activity>
+        <activity android:name=".DataShowActivity"></activity>
+        <activity android:name=".MainWeather"></activity>
+        <activity android:name=".TrainSearch"></activity>
+        <activity android:name=".Spot_ListMenu"></activity>
+        <activity android:name=".Dayschedule_finish"></activity>
+        <activity android:name=".Friends_list"></activity>
+        <activity android:name=".Friends_list_Details"></activity>
+        <activity android:name=".List"></activity>
+        <activity android:name=".AddSpotActivity"
+                 android:screenOrientation="portrait"></activity>
+        <activity android:name=".AddSpotActivity_AllspotsToMyspots"
+            android:screenOrientation="portrait"></activity>
+        <activity android:name=".AddSpotActivity_FriendspotsToMyspots"
+            android:screenOrientation="portrait"></activity>
+        <activity android:name=".PictureActivity"></activity>
+        <activity
+            android:name=".SpotDetailsActivity_edit"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name=".SpotDetailsActivity_map"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name=".SpotDetailsActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name=".SpotDetailsActivity_friend"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name=".SpotDetailsActivity_public"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name=".DataShowActivity_spotDetail"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name=".Note">
+            <intent-filter>
+                <action android:name=".ADD_ITEM"/>
+                <action android:name=".EDIT_ITEM"/>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+
+        </activity>
+        <activity
+            android:name=".ColorActivity"
+            android:theme="@android:style/Theme.Dialog"
+            >
+
+            <intent-filter>
+                <action android:name=".CHOOSE_COLOR"/>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <receiver
+            android:name=".AlarmReceiver"
+            android:enabled="true"
+            android:exported="true" >
+        </receiver>
+
+        <receiver
+            android:name=".InitAlarmReceiver"
+            android:enabled="true"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+    </application>
+
+
+
+</manifest>

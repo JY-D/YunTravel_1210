@@ -1,0 +1,52 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity">
+
+    <!---<item android:id="@+id/action_settings" android:title="@string/action_settings"
+        android:orderInCategory="100" app:showAsAction="never" />
+    <item android:id="@+id/action_insert"
+        android:title="新增"
+        app:showAsAction="never" />
+    <item android:id="@+id/action_update"
+        android:title="更新"
+        app:showAsAction="never" />
+    <item android:id="@+id/action_delete"
+        android:title="刪除"
+        app:showAsAction="never" />
+    <item android:id="@+id/action_queryAll"
+        android:title="顯示記錄"
+        app:showAsAction="never" />-->
+    <item
+        android:id="@+id/logout"
+        app:showAsAction="always"
+        android:title="logout"
+        android:icon="@drawable/logout"
+        android:onClick="Menuclick" />
+    <item
+        android:id="@+id/friends"
+        app:showAsAction="always"
+        android:title="friends"
+        android:icon="@drawable/friends"
+        android:onClick="Menuclick" />
+    <item
+        android:id="@+id/add_item"
+        app:showAsAction="always"
+        android:title="ADD"
+        android:icon="@android:drawable/ic_menu_add"
+        android:onClick="Menuclick" />
+    <item
+        android:id="@+id/revert_item"
+        app:showAsAction="always"
+        android:title="REVERT"
+        android:icon="@android:drawable/ic_menu_revert"
+        android:onClick="Menuclick"/>
+    <item
+        android:id="@+id/delete_item"
+        app:showAsAction="always"
+        android:title="DELETE"
+        android:icon="@android:drawable/ic_menu_delete"
+        android:onClick="Menuclick"/>
+
+
+</menu>

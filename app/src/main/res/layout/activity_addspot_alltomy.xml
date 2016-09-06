@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TableLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:padding="3dp"
+        android:orientation="horizontal">
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="景點名稱:"
+                android:textSize="16dp"
+                android:layout_column="0"
+                android:layout_weight="1"
+                android:id="@+id/title_text" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/add_title"
+                android:textSize="14dp"
+                android:layout_column="1"
+                android:layout_weight="1" />
+        </TableRow>
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="經緯度:"
+                android:textSize="16dp"
+                android:layout_column="0"
+                android:layout_weight="1"
+                android:id="@+id/coords_text" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/add_coordinate"
+                android:textSize="14dp"
+                android:layout_column="1"
+                android:layout_weight="1" />
+        </TableRow>
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="景點類型:"
+                android:textSize="16dp"
+                android:layout_column="0"
+                android:layout_weight="1"
+                android:id="@+id/type_text" />
+
+            <Spinner
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/add_type_select"
+                android:layout_weight="1"/>
+
+        </TableRow>
+        <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="景點地址:"
+            android:textSize="16dp"
+            android:layout_column="0"
+            android:layout_weight="1"
+            android:id="@+id/text_addr" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/add_addr"
+            android:textSize="14dp"
+            android:layout_column="1"
+            android:layout_weight="1" />
+    </TableRow>
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="連絡電話:"
+                android:textSize="16dp"
+                android:layout_column="0"
+                android:layout_weight="1"
+                android:id="@+id/text_phone" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/add_phone"
+                android:textSize="14dp"
+                android:layout_column="1"
+                android:layout_weight="1" />
+        </TableRow>
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:gravity="center_vertical|center_horizontal">
+
+            <RatingBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/like_Bar"
+                android:numStars="5"
+                android:stepSize="0.5"
+                style="?android:attr/ratingBarStyle"
+                android:isIndicator="false"
+                android:layout_gravity="right"
+                android:layout_alignBottom="@+id/linearLayout"
+                android:layout_alignParentEnd="true" />
+
+        </TableRow>
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:gravity="center_vertical|center_horizontal">
+
+            <ImageView
+                android:layout_width="200dp"
+                android:layout_height="150dp"
+                android:id="@+id/pic"
+                android:src="@drawable/iphoto_icon"/>
+        </TableRow>
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:gravity="center_vertical|center_horizontal">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/selectImage_Button"
+                android:onClick="onClick"
+                android:text="Select Image"
+                />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="儲存"
+                android:layout_weight="1"
+                android:id="@+id/store_button" />
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="取消"
+                android:layout_weight="3"
+                android:id="@+id/cancel_button" />
+        </TableRow>
+
+    </TableLayout>
+</LinearLayout>
